@@ -8,6 +8,6 @@ output "subnet-ids" {
   description = "Id's of the Subnets"
 }
 
-output "test" {
-  value = "test"
+output "blah" {
+  value = "blah"
 }
