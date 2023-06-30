@@ -8,3 +8,6 @@ output "subnet-ids" {
   description = "Id's of the Subnets"
 }
 
+output "art" {
+  value = "art"
+}
