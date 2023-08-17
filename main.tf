@@ -14,6 +14,7 @@ resource "azurerm_virtual_network" "module" {
   resource_group_name = azurerm_resource_group.module.name
   tags = {
     environment = "dev"
+    moduleVersion = "dummy"
   }
 }
 
