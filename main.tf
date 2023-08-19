@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "module" {
   location = var.location
   tags = {
     environment = "dev"
-    version     = "v0.12.0"
+    version     = "v1.0.0"
   }
 }
 
@@ -14,6 +14,7 @@ resource "azurerm_virtual_network" "module" {
   resource_group_name = azurerm_resource_group.module.name
   tags = {
     environment = "dev"
+    moduleVersion = "dummy"
   }
 }
 
@@ -22,6 +23,6 @@ resource "azurerm_subnet" "module" {
   count                = length(var.subnet_address_prefixes)
   resource_group_name  = azurerm_resource_group.module.name
   virtual_network_name = azurerm_virtual_network.module.name
-  address_prefix       = var.subnet_address_prefixes[count.index]
+  address_prefixes       = [var.subnet_address_prefixes[count.index]]
 }
 
